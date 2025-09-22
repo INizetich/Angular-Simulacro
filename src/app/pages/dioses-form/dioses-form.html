@@ -1,0 +1,39 @@
+
+<section class="main-section">
+    <main >
+        <div class="form-container">
+            <form  [formGroup]="formularioDioses" (submit)="verSubmit()">
+    
+                <label for="nombre">Nombre</label>
+               <input type="text" name="nombre" id="nombre" formControlName="nameG" placeholder="Ingrese el nombre del dios" required>  <!-- En el formControlName tengo que poner el mismo nombre que esta en mi inicializacion del form en mi componente -->
+                @if(name.invalid && name.touched){
+                    <p class="error-message" [class.show]="name.invalid && name.touched">El nombre es obligatorio</p>
+                }
+                <label for="dominio">Dominio</label>
+                <input type="text" name="dominio" id="dominio" formControlName="domainG" placeholder="Ingrese el dominio del dios" required>
+                @if (domain.invalid && domain.touched) {
+                    <p class="error-message" [class.show]="domain.invalid && domain.touched">El dominio es obligatorio</p>
+                }
+                <label for="simbolo">Simbolo</label>
+                <input type="text" name="simbolo" id="simbolo" formControlName="symbolG" placeholder="Ingrese el simbolo del dios" required>
+                @if (symbol.invalid && symbol.touched) {
+                    <p class="error-message" [class.show]="symbol.invalid && symbol.touched">El simbolo es obligatorio</p>
+                }
+               <label for="poder">Poder</label>
+               <input type="number" name="poder" id="poder" formControlName="powerG" placeholder="Ingrese el poder del dios" required>
+                @if (power.hasError("required") && power.touched) {
+                    <p class="error-message" [class.show]="power.invalid">El poder es obligatorio</p>
+                }@else if (power.hasError("max") && power.touched) {
+                    <p class="error-message" [class.show]="power.touched">El poder no puede ser mayor a 9000</p>
+                }
+               <label for="ciudad">Ciudad</label>
+               <input type="text" name="ciudad" id="ciudad" formControlName="cityG" placeholder="Ingrese la ciudad del dios" required>
+                @if (city.invalid && city.touched) {
+                    <p class="error-message" [class.show]="city.invalid && city.touched">La ciudad es obligatoria</p>
+                }
+                <button type="submit" [disabled]="formularioDioses.invalid">Enviar</button>
+        
+            </form>
+        </div>
+    </main>
+</section>

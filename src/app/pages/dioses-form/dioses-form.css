@@ -1,0 +1,95 @@
+.main-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+
+.main-section main{
+    grid-column: 2/3;
+    
+}
+
+.form-container{
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: 2px solid black;
+    border-radius: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.586);
+}
+
+
+.form-container input{
+   
+    margin: 1rem;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #cccccc60; /* borde por defecto */
+    outline: none;
+    text-align: center;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.form-container input:focus{
+    border-bottom-color:  #ff9900;
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
+
+.form-container label{
+    font-size: medium;
+    margin: 0 auto;
+    width: fit-content;
+    margin-top: 10px;
+    padding-top: 2rem;
+}
+
+.form-container input::placeholder{
+    color: black;
+    text-align: center;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .error-message.show {
+    opacity: 1;
+    height: auto;
+    margin-top: 5px;
+  }
+
+
+  .form-container button {
+    display: block;             /* hace que se comporte como bloque y podamos centrarlo */
+    margin: 1px auto 30px auto;   /* 20px arriba, auto a los lados para centrar, 0 abajo */
+    padding: 1rem 4rem;     /* más pequeño que antes */
+    background-color: white;
+    border-color: 4px solid black;               /* opcional, si querés sin borde */
+    border-radius: 2rem;
+    cursor: pointer;            /* cambia el cursor al pasar el mouse */
+    font-size: 14px;            /* tamaño del texto */
+    transition: transform 0.2s; /* efecto al hacer hover */
+    color: rgba(0, 0, 0, 0.658);
+  }
+
+  .form-container button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582);
+  }

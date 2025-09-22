@@ -1,0 +1,79 @@
+.main-footer {
+    background-color: #1e1e2f;   /* oscuro y elegante */
+    color: #fff;
+    padding: 40px 20px 20px 20px;
+    font-family: 'Fira Code', monospace;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-content .logo h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6f61;  /* color vibrante para resaltar */
+}
+
+.footer-content .links a {
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-content .links a:hover {
+    color: #ff6f61;
+    transform: scale(1.05);
+}
+
+/* ===== MODIFICACIÓN PARA FONT AWESOME ===== */
+.footer-content .social a {
+    color: #fff;
+    font-size: 24px;       /* tamaño del icono */
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+  
+  .footer-content .social a:hover {
+    color: #ff6f61;        /* color al pasar el mouse */
+    transform: scale(1.2); /* efecto de zoom */
+  }
+  
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-content .links {
+        margin: 10px 0;
+        
+    }
+
+    .footer-content a:hover{
+        cursor: pointer;
+    }
+
+    
+
+    .footer-content .social a {
+        font-size: 30px; /* iconos más grandes en móvil */
+        margin: 10px;
+    }
+}
